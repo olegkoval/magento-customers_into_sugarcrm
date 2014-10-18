@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Customers into SugarCRM
+ *
+ * @category    OlegKoval
+ * @package     OlegKoval_CustomersIntoSugarCrm
+ * @copyright   Copyright (c) 2013 Oleg Koval
+ * @author      Oleg Koval <oleh.koval@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <OlegKoval_CustomersIntoSugarCrm>
+            <version>1.0.0</version>
+            <depends>
+                <Mage_Customer/>
+            </depends>
+        </OlegKoval_CustomersIntoSugarCrm>
+    </modules>
+
+    <global>
+        <helpers>
+            <customersintosugarcrm>
+                <class>OlegKoval_CustomersIntoSugarCrm_Helper</class>
+            </customersintosugarcrm>
+        </helpers>
+
+        <models>
+            <customersintosugarcrm>
+                <class>OlegKoval_CustomersIntoSugarCrm_Model</class>
+            </customersintosugarcrm>
+        </models>
+    </global>
+
+    <frontend>
+        <events>
+            <customer_save_after>
+                <observers>
+                    <customersintosugarcrm_observer>
+                        <class>customersintosugarcrm/observer</class>
+                        <method>customerSaved</method>
+                    </customersintosugarcrm_observer>
+                </observers>
+            </customer_save_after>
+            <customer_delete_after>
+                <observers>
+                    <customersintosugarcrm_observer>
+                        <class>customersintosugarcrm/observer</class>
+                        <method>customerDeleted</method>
+                    </customersintosugarcrm_observer>
+                </observers>
+            </customer_delete_after>
+        </events>
+
+        <translate>                                                                                                                                   
+            <modules>                                                                                                                                 
+                <OlegKoval_CustomersIntoSugarCrm>                                                                                                                 
+                    <files>                                                                                                                           
+                        <default>OlegKoval_CustomersIntoSugarCrm.csv</default>                                                                                    
+                    </files>                                                                                                                          
+                </OlegKoval_CustomersIntoSugarCrm>                                                                                                                
+            </modules>                                                                                                                                
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <events>
+            <customer_save_after>
+                <observers>
+                    <customersintosugarcrm_observer>
+                        <class>customersintosugarcrm/observer</class>
+                        <method>customerSaved</method>
+                    </customersintosugarcrm_observer>
+                </observers>
+            </customer_save_after>
+            <customer_delete_after>
+                <observers>
+                    <customersintosugarcrm_observer>
+                        <class>customersintosugarcrm/observer</class>
+                        <method>customerDeleted</method>
+                    </customersintosugarcrm_observer>
+                </observers>
+            </customer_delete_after>
+        </events>
+
+        <translate>                                                                                                                                   
+            <modules>                                                                                                                                 
+                <OlegKoval_CustomersIntoSugarCrm>                                                                                                                 
+                    <files>                                                                                                                           
+                        <default>OlegKoval_CustomersIntoSugarCrm.csv</default>                                                                                    
+                    </files>                                                                                                                          
+                </OlegKoval_CustomersIntoSugarCrm>                                                                                                                
+            </modules>                                                                                                                                
+        </translate>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <customersintosugarcrm translate="title" module="customersintosugarcrm">
+                                            <title>Customers into SugarCRM</title>
+                                        </customersintosugarcrm>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                   </children>
+               </admin>
+           </resources>
+        </acl>
+    </adminhtml>
+</config>

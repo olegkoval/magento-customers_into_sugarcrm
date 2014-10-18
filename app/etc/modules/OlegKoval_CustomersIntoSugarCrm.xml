@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Customers into SugarCRM
+ *
+ * @category    OlegKoval
+ * @package     OlegKoval_CustomersIntoSugarCrm
+ * @copyright   Copyright (c) 2013 Oleg Koval
+ * @author      Oleg Koval <oleh.koval@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <OlegKoval_CustomersIntoSugarCrm>
+            <active>true</active>
+            <codePool>community</codePool>
+        </OlegKoval_CustomersIntoSugarCrm>
+    </modules>
+</config>
